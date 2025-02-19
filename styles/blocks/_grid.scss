@@ -5,9 +5,21 @@
   grid-template-columns: repeat(var(--gridColumns), 1fr);
   gap: 40px;
 
+  @include mobile {
+    gap: 30px;
+  }
+
   @for $i from 2 through 12 {
     &--#{$i} {
       --gridColumns: #{$i};
     }
   }
+
+  &--2 {
+    @include tablet {
+      --gridColumns: 1;
+    }
+  }
 }
+//Код ничего сам не выбирает. Количество колонок зависит от того,
+//какой класс ты добавил в HTML. <div class="grid grid--2">

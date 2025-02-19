@@ -1,0 +1,31 @@
+.banner {
+  --bannerimageoffsetY: 24px;
+
+  padding-block: var(--bannerimageoffsetY);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start; // ошибка из за которой buttonт растенуться и предеться ошибочн оустанавливать высоту
+    padding: 60px;
+    row-gap: 26px;
+  }
+  s &__description {
+    max-width: 500px;
+  }
+
+  &__image {
+    // var(--bannerimageoffsetY) — это значение переменной, например, 24px.
+    // Умножая на -1, получаем -24px.
+    // Таким образом, margin-block будет равен -20px.
+    margin-block: calc(var(--bannerimageoffsetY) * -1);
+  }
+}
