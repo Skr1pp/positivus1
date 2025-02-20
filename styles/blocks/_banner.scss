@@ -3,6 +3,10 @@
 
   padding-block: var(--bannerimageoffsetY);
 
+  @include tablet {
+    --bannerimageoffsetY: 0px;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -16,9 +20,13 @@
     flex-direction: column;
     align-items: start; // ошибка из за которой buttonт растенуться и предеться ошибочн оустанавливать высоту
     padding: 60px;
-    row-gap: 26px;
+    row-gap: 20px;
+
+    @include tablet {
+      padding: 50px;
+    }
   }
-  s &__description {
+  &__description {
     max-width: 500px;
   }
 
@@ -27,5 +35,14 @@
     // Умножая на -1, получаем -24px.
     // Таким образом, margin-block будет равен -20px.
     margin-block: calc(var(--bannerimageoffsetY) * -1);
+
+    @include tablet {
+      max-width: 40%;
+    }
+    // @include mobile {
+    //   display: none;
+    // }
+    // его можно так же скрыть через heddin-mobile, то етьс когда
+    // экран достигнит 767px то тогда элемент скроется
   }
 }

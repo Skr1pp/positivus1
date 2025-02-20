@@ -8,6 +8,7 @@
   border: var(--border);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
+  // overflow-x: hidden;
 
   @include mobile {
     display: grid;
@@ -95,8 +96,10 @@
       }
     }
 
-    &-label {
-      @include visually-hidden;
+    @include mobile {
+      &-label {
+        @include visually-hidden;
+      }
     }
     //получается мне нужно было скрыть span - с текстом
     // но что бы для скрин-ридеры он был, я использова
