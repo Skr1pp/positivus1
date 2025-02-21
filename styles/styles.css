@@ -969,4 +969,21 @@ h4 {
   .studies__link:active {
     opacity: 0.7;
   }
+}
+
+.process__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.process__item {
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-accent);
+}
+.process__accordion {
+  padding: 40px 60px;
+  row-gap: 30px;
+}
+.process__accordion-body {
+  border-top: 1px solid var(--color-dark);
 }/*# sourceMappingURL=styles.css.map */
